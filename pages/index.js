@@ -7,6 +7,8 @@ import Filters from '../components/Filters'
 import TaskForm from '../components/TaskForm'
 import TaskList from '../components/TaskList'
 
+import styles from '../styles/Home.module.scss'
+
 const HomePage = () => {
 	const [tasks, setTasks] = useState([])
 	const [tasksRemaining, setTasksRemaining] = useState(0)
@@ -60,11 +62,12 @@ const HomePage = () => {
 	}
 
 	return (
-		<div>
+		<div className={styles.container}>
 			<Head>
-				<title>Next Tasks</title>
+				<title>NextJS Tasks</title>
 			</Head>
-			<h1>Next Tasks</h1>
+			<h1 className={styles.headline}>NextJS Tasks</h1>
+			<p>What do you have to do today???</p>
 			<Error error={error} />
 			<TaskForm addTask={addTask} />
 			<Filters filters={filters} toggleShowCompleted={toggleShowCompleted} />

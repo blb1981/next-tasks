@@ -1,0 +1,33 @@
+.container {
+	text-align: center;
+}
+
+.headline {
+	color: #66fcf1;
+	font-family: 'Audiowide', Arial, Helvetica, sans-serif;
+}
+
+.inputBox {
+	border: none;
+	padding: .5rem 2rem;
+	font-size: 2rem;
+	border: 5px solid grey;
+}
+
+.inputBox:focus {
+	outline: none;
+}
+
+.btn {
+	color: #fff;
+	background-color: #0b0c10;
+	padding: .5rem 2rem;
+	margin: 0 1rem;
+	font-size: 2rem;
+	font-family: 'Nixie One', Arial, Helvetica, sans-serif;
+	border: 5px solid grey;
+}
+
+.error {
+	color: #66fcf1;
+}

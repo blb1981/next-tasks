@@ -1,5 +1,7 @@
+import styles from '../styles/Home.module.scss'
+
 const Error = ({ error }) => {
-	return <div style={{ color: 'red' }}>{error}</div>
+	return <p className={styles.error}>{error}</p>
 }
 
 export default Error

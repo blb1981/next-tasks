@@ -1,5 +1,7 @@
 import Task from './Task'
 
+import styles from '../styles/Home.module.scss'
+
 const TaskList = ({ tasks, toggleTask, deleteTask, filters, tasksRemaining }) => {
 	const allDoneMessage =
 		tasksRemaining.length > 0
@@ -7,7 +9,7 @@ const TaskList = ({ tasks, toggleTask, deleteTask, filters, tasksRemaining }) =>
 			: 'All done!'
 	return (
 		<div>
-			<h2>Tasks</h2>
+			<h2 className={styles.headline}>Tasks</h2>
 			{tasksRemaining.length === 0 && !filters.showCompleted ? (
 				<>
 					<p>{allDoneMessage}</p>
