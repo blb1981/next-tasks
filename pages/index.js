@@ -2,13 +2,19 @@ import { useState } from 'react'
 import Head from 'next/head'
 import { v4 as uuidv4 } from 'uuid'
 
+import Error from '../components/Error'
 import TaskForm from '../components/TaskForm'
 import TaskList from '../components/TaskList'
 
 const HomePage = () => {
 	const [tasks, setTasks] = useState([])
+	const [error, setError] = useState('')
 
 	const addTask = (task) => {
+		if (task === '') {
+			setError('Task summary cannot be blank. Try again.')
+			return
+		}
 		setTasks((prevState) => [
 			...prevState,
 			{
@@ -17,17 +23,22 @@ const HomePage = () => {
 				isComplete: false,
 			},
 		])
+		setError('')
 	}
 
-	const toggleTask = (task) => {
-    console.log(task)
-		// setTasks((prevState) => [
-		// 	...prevState,
-		// 	{
-		// 		...task,
-		// 		isComplete: !task.isComplete,
-		// 	},
-		// ])
+	const toggleTask = (taskId) => {
+		const newTasks = tasks.map((task) => {
+			if (task.id === taskId) {
+				task.isComplete = !task.isComplete
+			}
+			return task
+		})
+		setTasks(newTasks)
+	}
+
+	const deleteTask = (taskId) => {
+		const newTasks = tasks.filter((task) => task.id !== taskId)
+		setTasks(newTasks)
 	}
 
 	return (
@@ -36,8 +47,9 @@ const HomePage = () => {
 				<title>Next Tasks</title>
 			</Head>
 			<h1>Next Tasks</h1>
+			<Error error={error} />
 			<TaskForm addTask={addTask} />
-			<TaskList toggleTask={toggleTask} tasks={tasks} />
+			<TaskList toggleTask={toggleTask} deleteTask={deleteTask} tasks={tasks} />
 		</div>
 	)
 }

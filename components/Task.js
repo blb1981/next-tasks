@@ -1,8 +1,10 @@
-const Task = ({ task, toggleTask }) => {
+const Task = ({ task, toggleTask, deleteTask }) => {
 	return (
 		<>
 			<li>
-				{task.summary} - <input type='checkbox' defaultChecked={task.isComplete} onChange={toggleTask} />
+				<span style={{ textDecoration: task.isComplete ? 'line-through' : 'none' }}>{task.summary}</span> -{' '}
+				<input type='checkbox' defaultChecked={task.isComplete} onChange={() => toggleTask(task.id)} />{' '}
+				<button onClick={() => deleteTask(task.id)}>Delete</button>
 			</li>
 		</>
 	)
