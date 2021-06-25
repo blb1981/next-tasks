@@ -1,21 +1,25 @@
 import Task from './Task'
 
-const TaskList = ({ tasks, toggleTask, deleteTask }) => {
+const TaskList = ({ tasks, toggleTask, deleteTask, filters, tasksRemaining }) => {
+	const allDoneMessage =
+		tasksRemaining.length > 0
+			? `You have ${tasksRemaining.length} ${tasksRemaining.length === 1 ? 'task' : 'tasks'} to do.`
+			: 'All done!'
 	return (
 		<div>
 			<h2>Tasks</h2>
-			{tasks.length === 0 ? (
+			{tasksRemaining.length === 0 && !filters.showCompleted ? (
 				<>
-					<p>No tasks for now!</p>
+					<p>{allDoneMessage}</p>
 				</>
 			) : (
 				<>
-					<p>
-						You have {tasks.length} {tasks.length === 1 ? 'task' : 'tasks'} to do.
-					</p>
-					{tasks.map((task) => (
-						<Task key={task.id} task={task} toggleTask={toggleTask}  deleteTask={deleteTask} />
-					))}
+					<p>{allDoneMessage}</p>
+					{tasks.map((task) => {
+						if (!task.isComplete || filters.showCompleted) {
+							return <Task key={task.id} task={task} toggleTask={toggleTask} deleteTask={deleteTask} />
+						}
+					})}
 				</>
 			)}
 		</div>
