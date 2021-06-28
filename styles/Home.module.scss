@@ -1,17 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Bebas+Neue&family=Heebo&display=swap');
+@import './variables';
+
 .container {
 	text-align: center;
 }
 
 .headline {
-	color: #66fcf1;
-	font-family: 'Audiowide', Arial, Helvetica, sans-serif;
+	color: $headline-font-color;
+	font-family: $headline-font;
 }
 
 .inputBox {
 	border: none;
-	padding: .5rem 2rem;
-	font-size: 2rem;
-	border: 5px solid grey;
+	border: 5px solid $form-border-color;
 }
 
 .inputBox:focus {
@@ -20,14 +21,45 @@
 
 .btn {
 	color: #fff;
-	background-color: #0b0c10;
-	padding: .5rem 2rem;
+	background-color: $button-bg-color;
 	margin: 0 1rem;
-	font-size: 2rem;
-	font-family: 'Nixie One', Arial, Helvetica, sans-serif;
-	border: 5px solid grey;
+	font-family: $body-font;
+	border: 5px solid $form-border-color;
 }
 
 .error {
-	color: #66fcf1;
+	color: $headline-font-color;
+}
+
+.inputBox,
+.btn {
+	display: inline-block;
+	font-size: 2rem;
+	padding: 20px;
+}
+
+.btnTask {
+	color: #fff;
+	font-size: 2rem;
+	background-color: $button-bg-color;
+	margin: 0 5rem;
+	font-family: $body-font;
+	border: 4px solid $form-border-color;
+	padding: .5rem;
+}
+.checkbox {
+	display: inline-block;
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+	margin-left: 20px;
+}
+
+.checkboxTask {
+	display: inline-block;
+	position: absolute;
+	margin-top: 1rem;
+	width: 2rem;
+	height: 2rem;
+	margin-left: 20px;
 }

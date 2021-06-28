@@ -1,0 +1,40 @@
+// Import font/variables
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Josefin+Sans&display=swap');
+@import './variables';
+
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 62.5%;
+	background-color: $background-color;
+	color: $text-color;
+	font-family: $body-font;
+}
+
+h1 {
+	font-size: 3rem;
+	margin: 1rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+p,
+li,
+label {
+	font-size: 1.6rem;
+	margin: 1rem;
+}
+
+form {
+	margin: 1rem;
+}
+
+
