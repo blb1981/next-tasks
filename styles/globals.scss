@@ -5,36 +5,41 @@
 *,
 *:before,
 *:after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	font-size: 62.5%;
-	background-color: $background-color;
-	color: $text-color;
-	font-family: $body-font;
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $body-font;
+  font-size: 2rem;
 }
 
 h1 {
-	font-size: 3rem;
-	margin: 1rem;
+  font-size: 3rem;
+  margin: 1rem;
 }
 
 h2 {
-	font-size: 2rem;
+  font-size: 2rem;
 }
 
 p,
 li,
 label {
-	font-size: 1.6rem;
-	margin: 1rem;
+  font-size: 1.6rem;
+  margin: 1rem;
+}
+
+input {
+  margin: 0 0 0.5rem 0;
+  max-width: 15em;
+  width: 100%;
 }
 
 form {
-	margin: 1rem;
+  margin: 1rem;
 }
-
 
